@@ -1,0 +1,25 @@
+<form>
+
+
+
+  <div *ngFor="let country of countries; let countryIndex = index">
+  <h4 >{{country.value.name}}</h4>
+
+<form>
+  
+    <select [disabled]="country.value.isDisabled" matNativeControl (change)="onOptionSelectedListener($event.target.value, country)">
+      <option>Select Option</option>
+      <option id="product.id" *ngFor="let border of country.value.borders; let neighbourIndex = index" [value]="border">
+        {{border}}
+      </option>
+    </select>
+
+</form>
+</div>
+  
+  
+
+
+
+ 
+</form>

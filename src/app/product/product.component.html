@@ -1,0 +1,21 @@
+
+<button (click)="addProduct()">Add Product</button>
+
+<div *ngFor="let product of products; let position = index">
+  <button id="{{ product.id }}" (click)="productClickListener(position,product)">{{ product.name }}</button>
+</div>
+
+<h1>hello</h1>
+
+
+<form>
+  <h4>mat-select</h4>
+  
+    <select matNativeControl [(ngModel)]="selectedProduct" name="product" (change)="onOptionSelectedListener($event.target.value)">
+      <option id="product.id" *ngFor="let product of products; let position = index" [value]="position">
+        {{product.name}}
+      </option>
+    </select>
+  <p> Selected product: {{selectedProduct}} </p>
+</form>
+
